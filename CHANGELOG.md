@@ -4,7 +4,49 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.9.0-rc.1] - UNRELEASED
+## [1.10.0-rc.1] - UNRELEASED
+
+### Added
+- make installer work for windows - @Flyingmana (#2616)
+- "Clear cart" button in the cart - @jablpiotrek (#2587)
+- Global config api path under `api.url` - @BartoszLiburski (#2622)
+- Google Tag Manager integration - @talalus (#841)
+
+### Fixed
+- Sidebar menu wasn't possible to scroll - @PanMisza (#2627)
+- Confirmation popup 'Product has beed added to cart' is displayed only once - @JKrupinski (#2610)
+- Moved My Account options from Categories - @bartdominiak (#2612)
+
+### Changed / Improved
+- Improved ProductGalleryCarousel component to handle nonnumeric options id’s - @danieldomurad (#2586)
+- Number of displayed products is now visible on PLP on desktop - @awierzbiak (#2504)
+- Improved visibility of product SKU in wishlist  - @PanMisza (#2606)
+- Instant focus to search input field after click on search icon in navbar - @ca1zr (#2608)
+- Added support for the newest node version - @gdomiciano (#2669)
+- Default storeId from `0` to `1` for multistore and cmsdata logic - @janmyszkier (#2590)
+- Used `$bus` plugin instead of EventBus import - @szafran89 (#2630)
+- BaseCheckbox now uses v-model. @click is not needed anymore - @haukebri (#2630)
+- Image selection supporting multiple configurable options - @mdesmet (#2599)
+- Product video - retrieve video id from 'video_id' field (if set) instead of 'id' - @afirlejczyk
+
+## [1.9.0-rc.2] - UNRELEASED
+
+### Fixed
+- Payment issue when no address set - @szafran89 (#2593)
+- Search component result message when search term is less than 3 letters - @robwozniak (#2561)
+- Removed childSku parameter in url for non-configurable products when using urlDispatcher - @Aekal (#2605)
+- Image lazy loading after SSR reload - @pkarw (#2641)
+- Modules can add custom URL - @pkarw (#2601)
+- Url routes fixes - @pkarw (#2598, #2645, #2614)
+- Fix for shopping cart actions when the `cartId` has been cleared out - @pkarw (#2567)
+- Fixed always common cache issue for multistore - @filrak (#2595)
+- Checkout copy address data will sync on later change - @haukebri (#2661)
+- Fixed Safari style for sort-by select - @haukebri (#2642)
+- fixed My orders in My Profile not refreshed after putting an order - @filrak (#2559)
+- Fixed static file handler to immediately return 404 status for missing files - @grimason (#2685)
+- Fixed maxAge Response Header for static files and Content-Type for Service Worker - @grimason (#2686)
+
+## [1.9.0-rc.1] - 2019.03.07
 
 ### Added
 - The Url Dispatcher feature added for friendly URLs. When `config.seo.useUrlDispatcher` set to true the `product.url_path` and `category.url_path` fields are used as absolute URL addresses (no `/c` and `/p` prefixes anymore). Check the latest `mage2vuestorefront` snapshot and reimport Your products to properly set `url_path` fields - #2010 - @pkarw
@@ -19,9 +61,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Material Icons are loaded asynchronously - @JKrupinski, @filrak (#2060)
 - Update to babel 7 - @lukeromanowicz (#2554)
 
+
+## [1.8.4] - 2019.03.26
+
+### Fixed
+- Problem with incomplete category products load for offline use - @patzick (#2543)
+- Category products view crash on scrolling down in offline mode - @patzick (#2569)
+- Default propery issue for the col-xs-* classes - @cnviradiya (#2558)
+- Wishlist and compare list not cached properly - @filrak (#2580)
+
+### Changed / Improved
+- Category and Homepage products are now cached for offline use on SSR entry - @patzick (@1698)
+
 ## [1.8.3] - 2019.03.03
 
 ### Added
+- Payment Request API integration - @qiqqq (#2306)
 - New reactive helper to check online state. Usage: `import { onlineHelper } from '@vue-storefront/core/helpers'` and then `onlineHelper.isOnline` - @patzick (#2510)
 - Cart count config, allows you to display the item count instead of a sum of the item quantities - @pauluse (#2483)
 - Video support in Product Gallery component. - @rain2o (#2433)
